@@ -4,7 +4,19 @@
         <meta charset="utf-8">
         <title>Rock, Paper, Scissors</title>
         <script src="./code.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <button class="rock fade-in">ROCK</button>
+        <button class="paper fade-in">PAPER</button>
+        <button class="scissors fade-in">SCISSORS</button>
+
+
+        <script>
+            const rock_btn = document.querySelector('.rock');
+            rock_btn.addEventListener('click', () => {
+                console.log(playRound('rock', computerPlay()))
+            });
+        </script>
     </body>
 </html>
