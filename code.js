@@ -18,9 +18,9 @@ function playRound(playerSelection, computerSelection) {
     if (pC == cC) {
         return `Draw! ${pC} (player) ties with ${cC} (computer).`;
     } else if ((pC === "Rock" && cC == "Scissors") || (pC === "Paper" && cC == "Rock") || (pC === "Scissors" && cC == "Paper")) {
-        return `You win! ${pC} (player) beats ${cC} (computer).`;
+        return `Win! ${pC} (player) beats ${cC} (computer).`;
     } else {
-        return `You lose! ${pC} (player) loses to ${cC} (computer).`;
+        return `Lose! ${pC} (player) loses to ${cC} (computer).`;
     }
 
 }

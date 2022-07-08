@@ -7,16 +7,70 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button class="rock fade-in">ROCK</button>
-        <button class="paper fade-in">PAPER</button>
-        <button class="scissors fade-in">SCISSORS</button>
+        <div style="display: flex; justify-content: center;">
+            <button class="rock fade-in">ROCK</button>
+            <button class="paper fade-in">PAPER</button>
+            <button class="scissors fade-in">SCISSORS</button>
+        </div>
 
+        <div class="results">
+
+        </div>
+
+        <div class="score">
+            <div class="player">PLAYER: 0</div>
+            <div class="computer">COMPUTER: 0</div>
+        </div>
+
+
+        
 
         <script>
+            let play_score = 0;
+            let com_score = 0;
+            const results = document.querySelector(".results");
+            const player = document.querySelector(".player");
+            const computer = document.querySelector(".computer");
+
             const rock_btn = document.querySelector('.rock');
             rock_btn.addEventListener('click', () => {
-                console.log(playRound('rock', computerPlay()))
+                let result = playRound('rock', computerPlay());
+                updateScore(result);
+                results.textContent = result;
             });
+
+            const paper_btn = document.querySelector('.paper');
+            paper_btn.addEventListener('click', () => {
+                let result = playRound('paper', computerPlay());
+                updateScore(result);
+                results.textContent = result;
+            });
+
+            const scissors_btn = document.querySelector('.scissors');
+            scissors_btn.addEventListener('click', () => {
+                let result = playRound('scissors', computerPlay());
+                updateScore(result);
+                results.textContent = result;
+            });
+
+            function updateScore(string) {
+                const val = string.substring(0,1);
+                switch (val) {
+                    case "D":
+                        
+                        break;
+                    case "W":
+                        play_score++;
+                        break;
+                    case "L":
+                        com_score++;
+                        break;
+                }
+                
+                player.textContent = `PLAYER: ${play_score}`;
+                computer.textContent = `COMPUTER: ${com_score}`;
+            }
+
         </script>
     </body>
 </html>
