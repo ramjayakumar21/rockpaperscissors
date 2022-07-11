@@ -4,6 +4,17 @@ button {
     margin: 10px;
 }
 
+.rock,
+.paper,
+.scissor {
+    border: solid black 3px;
+}
+
+.hovering {
+    box-shadow: 10px red;
+    border-color: aquamarine;
+}
+
 .fade-in {
     animation: fadeIn 1s;
 }
@@ -12,4 +23,10 @@ button {
 @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;}
+}
+
+body {
+    background-image: url("../media/bgpage.jpg");
+    background-repeat: no-repeat;
+    background-size: 2000px 1000px;
 }

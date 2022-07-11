@@ -8,7 +8,7 @@
     </head>
     <body>
         <div style="display: flex; justify-content: center;">
-            <button class="rock fade-in">ROCK</button>
+            <img src="../media/firelogo.png" class="rock fade-in">
             <button class="paper fade-in">PAPER</button>
             <button class="scissors fade-in">SCISSORS</button>
         </div>
@@ -32,11 +32,16 @@
             const player = document.querySelector(".player");
             const computer = document.querySelector(".computer");
 
+
             const rock_btn = document.querySelector('.rock');
             rock_btn.addEventListener('click', () => {
                 let result = playRound('rock', computerPlay());
                 updateScore(result);
                 results.textContent = result;
+            });
+
+            rock_btn.addEventListener('onmouseover', () => {
+                rock_btn.classList.add('hovering');
             });
 
             const paper_btn = document.querySelector('.paper');
@@ -70,6 +75,8 @@
                 player.textContent = `PLAYER: ${play_score}`;
                 computer.textContent = `COMPUTER: ${com_score}`;
             }
+
+            
 
         </script>
     </body>
